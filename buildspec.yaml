@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  build:
+    commands:
+      - echo Packaging Lambda functions
+      - cd index-photos
+      - zip -r ../index-photos.zip .
+      - cd ../search-photos
+      - zip -r ../search-photos.zip .
+artifacts:
+  files:
+    - index-photos.zip
+    - search-photos.zip
